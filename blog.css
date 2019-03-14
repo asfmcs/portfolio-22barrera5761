@@ -1,0 +1,17 @@
+/* The CSS Text Propertie I investigated was how to transform text into either upper or lower case! */
+
+body {
+  text-align: center;
+  text-size: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: pink
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+ul {
+  text-align:center;
+  list-style: none;
+}

@@ -1,0 +1,41 @@
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+a id= "links" {
+  text-color: rgb,black;
+}
+
+body {
+  text-align: justify;
+   /* This is a single-line comment */
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: rgb(255,149,218);
+background: linear-gradient(90deg, rgba(255,149,218,1) 35%, rgba(108,253,255,1) 100%);
+}
+
+h3 {
+  text-decoration: underline
+}

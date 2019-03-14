@@ -1,0 +1,27 @@
+body{
+  background-color: rgb(199, 253, 253);
+}
+
+h2{
+  text-decoration:underline;
+}
+
+ol {
+  background-color: rgb(198, 208, 255);
+  }
+
+ul {
+  background-color: rgb(198, 208, 255);
+  }
+
+#h2 {
+  text-align: center;
+}
+
+#h1 {
+  text-align: center;
+}
+
+#h3 {
+  text-decoration: underline;
+}
