@@ -1,0 +1,197 @@
+<html>
+<head>
+<title>Maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Maze</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    //Background
+var bgwidth=1000;
+var bgheight=1000;
+//Ghosts
+var headradius= 17.5;
+var rectwidth= headradius *2;
+var rectheight= 30; 
+var footradius=6.25; 
+
+var eyeradius=5;
+var eyeoffset=7;
+var pupilradius= 2;
+var pupilleftoffset= 4;
+var pupilheightoffset= 1.5;
+var pupilrightoffset= 10;
+var pupilradius= 2;
+//Pacman
+
+
+
+//Maze
+
+
+function start(){
+    
+    var background= new Rectangle(bgwidth,bgwidth);
+    background.setPosition(0,0);
+    background.setColor(Color.black);
+    add(background);
+    
+    var text = new Text("ARE YOU READY?");
+	text.setFont("30pt Arial");
+	text.setColor(Color.white);
+	text.setPosition(24,300);
+	add(text);
+	
+	var myArc=new Arc(70,40,340,0);
+    myArc.setPosition(300,400);
+    myArc.setColor(Color.YELLOW);
+    add(myArc);
+    
+    var eyecircle= new Circle(4);
+    eyecircle.setPosition(300,370);
+    eyecircle.setColor(Color.BLACK);
+    add(eyecircle);
+    
+	verticalline(50,200);
+    verticalline(130, 300);
+    verticalline(200, 100); 
+    verticalline(310, 500);
+    
+    verticalline2(200, 500);
+    verticalline2(380, 180); 
+    verticalline2(450, 70);
+    
+    horizontalLine(250, 65); 
+    horizontalLine(370, 200);
+    
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawGhost(centerX, centerY-10, Color.red);
+    drawGhost(130,230, Color.green);
+    drawGhost(350,230, Color.purple);
+    drawGhost(50,230, Color.orange);
+    drawGhost(280,230, Color.yellow); 
+    
+}   
+    
+    
+function verticalline(x,length){
+    var verticalline = new Line(0,x,length,x);
+    verticalline.setLineWidth(5);
+    verticalline.setColor(Color.WHITE);
+    add(verticalline);
+    
+    }
+    
+   
+    
+function verticalline2(x,length){
+    var verticalline2 = new Line(0,x,length,x);
+    verticalline2.setLineWidth(5);
+    verticalline2.setColor(Color.WHITE);
+    add(verticalline2);
+    
+    }
+    
+    
+
+function horizontalLine(y,length){
+    var horizontalline = new Line(y,0,y,length);
+    horizontalline.setLineWidth(5);
+    horizontalline.setColor(Color.WHITE);
+    add(horizontalline);
+    }
+
+
+
+    
+    function drawGhost(centerX, centerY, color){
+    var circle = new Circle (headradius);
+    circle.setPosition(centerX,centerY);
+    circle.setColor(color);
+    add(circle);
+
+    var rect = new Rectangle(rectwidth,rectheight);
+    rect.setPosition(centerX-rectwidth/2, centerY);
+    rect.setColor(color);
+    add(rect);
+    
+    var eyes= new Circle (eyeradius);
+    eyes.setPosition(centerX + eyeoffset, centerY);
+    eyes.setColor(Color.WHITE);
+    add(eyes);
+    
+    var eyes= new Circle (eyeradius);
+    eyes.setPosition(centerX - eyeoffset, centerY);
+    eyes.setColor(Color.WHITE);
+    add(eyes);
+    
+    var pupils= new Circle (pupilradius);
+    pupils.setPosition(centerX - pupilrightoffset +1, centerY);
+    pupils.setColor(Color.BLACK);
+    add(pupils);
+    
+    var pupils= new Circle (pupilradius);
+    pupils.setPosition(centerX + pupilleftoffset+5, centerY);
+    pupils.setColor(Color.BLACK);
+    add(pupils);
+    
+    var circle1= new Circle(footradius);
+    circle1.setPosition(centerX+11, centerY+rectheight);
+    circle1.setColor(color);
+    add(circle1);
+
+    var circle2= new Circle(footradius);
+    circle2.setPosition(centerX-11, centerY+rectheight);
+    circle2.setColor(color);
+    add(circle2);
+
+    var circle3= new Circle(footradius);
+    circle3.setPosition(centerX, centerY+rectheight);
+    circle3.setColor(color);
+    add(circle3); 
+
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
